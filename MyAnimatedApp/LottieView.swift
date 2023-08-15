@@ -13,6 +13,8 @@ struct LottieView: UIViewRepresentable {
     var animationName: String
     let loopMode: LottieLoopMode
     
+    
+    //This method is used to update view, and in order to conform to protocol 'UIViewRepresentable', we have to add this func.
     func updateUIView(_ uiView: UIViewType, context: Context) {
         
     }
