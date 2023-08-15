@@ -8,12 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var toggleAnimation = false
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Button  {
+                toggleAnimation.toggle()
+            } label: {
+                Text("Toggle Animation")
+                    .font(.title)
+            }
+            .padding(.bottom, 100)
+            .animation(.easeIn, value: toggleAnimation)
+
+            
+            if toggleAnimation {
+                LottieView(animationName: "animate", loopMode: .loop)
+                    .frame(width: 200, height: 200)
+            }
         }
         .padding()
     }
